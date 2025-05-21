@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Recipe: Equatable {
+public struct Recipe: Equatable, Sendable {
     let id: String
     let type: String
     let sectionId: String

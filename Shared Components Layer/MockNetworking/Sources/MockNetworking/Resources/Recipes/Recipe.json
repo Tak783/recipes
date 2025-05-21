@@ -1,0 +1,28 @@
+{
+    "id": "food/2021/jun/23/how-to-make-summer-minestrone-recipe-felicity-cloake-masterclass",
+    "type": "article",
+    "sectionId": "food",
+    "sectionName": "Food",
+    "webPublicationDate": "2021-06-23T11:00:26Z",
+    "webTitle": "How to make summer minestrone – recipe | Felicity Cloake's masterclass",
+    "webUrl": "https://www.theguardian.com/food/2021/jun/23/how-to-make-summer-minestrone-recipe-felicity-cloake-masterclass",
+    "apiUrl": "https://content.guardianapis.com/food/2021/jun/23/how-to-make-summer-minestrone-recipe-felicity-cloake-masterclass",
+    "fields": {
+        "headline": "How to make summer minestrone – recipe ",
+        "thumbnail": "https://media.guim.co.uk/6b482530ff8e56ed4c0e6027cf3536fddb7fdeb7/1540_2233_5447_3269/500.jpg"
+    },
+    "tags": [{
+        "id": "food/series/felicity-cloake-s-masterclass",
+        "type": "series",
+        "sectionId": "food",
+        "sectionName": "Food",
+        "webTitle": "Felicity Cloake's masterclass",
+        "webUrl": "https://www.theguardian.com/food/series/felicity-cloake-s-masterclass",
+        "apiUrl": "https://content.guardianapis.com/food/series/felicity-cloake-s-masterclass",
+        "references": [],
+        "description": "<p>Learn to cook the classics in a few easy steps.</p>"
+    }],
+    "isHosted": false,
+    "pillarId": "pillar/lifestyle",
+    "pillarName": "Lifestyle"
+}

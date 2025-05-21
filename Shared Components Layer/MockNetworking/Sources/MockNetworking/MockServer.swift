@@ -7,7 +7,7 @@
 
 import Foundation
 
-public final class MockServer {
+public struct MockServer {
     public static func loadLocalJSON(
         _ fileName: String,
         fromBundle bundle: Bundle

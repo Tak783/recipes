@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Fields: Equatable {
+public struct Fields: Equatable, Sendable {
     let headline: String
     let thumbnail: String
 }

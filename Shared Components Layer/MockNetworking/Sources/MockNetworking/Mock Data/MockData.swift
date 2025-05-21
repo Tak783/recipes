@@ -7,10 +7,12 @@
 
 import Foundation
 
-public final class MockData {
+public struct MockData {
     public enum FileName: String {
         case badJSON = "BadJSON"
         case emptyJSON = "EmptyJSON"
+        case recipe = "Recipe"
+        case recipesFeed = "RecipesFeed"
     }
     
     public static var mockNetworkingBundle: Bundle {

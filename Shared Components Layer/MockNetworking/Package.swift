@@ -1,21 +1,48 @@
-// swift-tools-version: 6.0
+// swift-tools-version: 5.9
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 let package = Package(
     name: "MockNetworking",
+    platforms: [
+        .iOS(.v17)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
             name: "MockNetworking",
-            targets: ["MockNetworking"]),
+            targets: ["MockNetworking"]
+        ),
+    ],
+    dependencies: [
+        .package(
+            name: "CoreFoundational",
+            path: "../../Core Layer/CoreFoundational"
+        ),
+        .package(
+            name: "CoreNetworking",
+            path: "../CoreNetworking"
+        )
     ],
     targets: [
-        // Targets are the basic building blocks of a package, defining a module or a test suite.
-        // Targets can depend on other targets in this package and products from dependencies.
         .target(
-            name: "MockNetworking"),
+            name: "MockNetworking",
+            dependencies: [
+                .product(
+                    name: "CoreFoundational",
+                    package: "CoreFoundational"
+                ),
+                .product(
+                    name: "CoreNetworking",
+                    package: "CoreNetworking"
+                )
+            ],
+            resources: [
+                .process(
+                    "Resources"
+                )
+            ]
+        ),
         .testTarget(
             name: "MockNetworkingTests",
             dependencies: ["MockNetworking"]

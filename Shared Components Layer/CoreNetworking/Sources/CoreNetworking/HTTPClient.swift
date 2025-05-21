@@ -9,7 +9,7 @@
 
 import Foundation
 
-public protocol HTTPClient {
+public protocol HTTPClient: Sendable {
     typealias Result = Swift.Result<(Data, HTTPURLResponse), Error>
     
     func performRequest(_ request: URLRequest) async -> Result

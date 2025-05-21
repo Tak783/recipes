@@ -21,6 +21,10 @@ let package = Package(
         .package(
             name: "CoreNetworking",
             path: "../../Shared Components Layer/CoreNetworking"
+        ),
+        .package(
+            name: "MockNetworking",
+            path: "../../Shared Components Layer/MockNetworking"
         )
     ],
     targets: [
@@ -41,7 +45,8 @@ let package = Package(
             name: "RecipesFeatureTests",
             dependencies: [
                 "RecipesFeature",
-                "CoreNetworking"
+                "CoreNetworking",
+                "MockNetworking"
             ]
         ),
     ]

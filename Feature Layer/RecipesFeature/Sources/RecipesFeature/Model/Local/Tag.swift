@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct Tag: Equatable {
+public struct Tag: Equatable, Sendable {
     let id: String
     let type: String
     let webTitle: String
