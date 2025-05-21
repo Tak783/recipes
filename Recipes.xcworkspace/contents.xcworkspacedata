@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workspace
    version = "1.0">
-   <FileSystemSynchronizedGroup
-      location = "group:Core Foundational"
-      name = "Core Foundational">
-   </FileSystemSynchronizedGroup>
-   <FileSystemSynchronizedGroup
-      location = "group:Shared Components Layer"
-      name = "Shared Components Layer">
-   </FileSystemSynchronizedGroup>
-   <FileSystemSynchronizedGroup
+   <Group
+      location = "group:Foundation Layer"
+      name = "Foundation Layer">
+      <FileRef
+         location = "group:CoreFoundational">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Core Shared Components Layer"
+      name = "Core Shared Components Layer">
+      <FileRef
+         location = "group:CoreNetworking">
+      </FileRef>
+      <FileRef
+         location = "group:MockNetworking">
+      </FileRef>
+   </Group>
+   <Group
       location = "group:Feature Layer"
       name = "Feature Layer">
-   </FileSystemSynchronizedGroup>
-   <FileSystemSynchronizedGroup
-      location = "group:Presentation"
-      name = "Presentation">
-   </FileSystemSynchronizedGroup>
+      <FileRef
+         location = "group:RecipesFeature">
+      </FileRef>
+   </Group>
+   <Group
+      location = "group:Presentation Layer"
+      name = "Presentation Layer">
+      <FileRef
+         location = "container:RecipesClient/RecipesClient.xcodeproj">
+      </FileRef>
+   </Group>
 </Workspace>

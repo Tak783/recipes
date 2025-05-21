@@ -16,11 +16,11 @@ struct RemoteRecipe: Decodable {
     let webTitle: String
     let webUrl: String
     let apiUrl: String
-    let fields: RemoteFields
-    let tags: [RemoteTag]
+    let fields: RemoteFields?
+    let tags: [RemoteTag]?
     let isHosted: Bool
-    let pillarId: String
-    let pillarName: String
+    let pillarId: String?
+    let pillarName: String?
 }
 
 extension RemoteRecipe {
@@ -34,8 +34,8 @@ extension RemoteRecipe {
             webTitle: webTitle,
             webUrl: webUrl,
             apiUrl: apiUrl,
-            fields: fields.toModel(),
-            tags: tags.toModels(),
+            fields: fields?.toModel(),
+            tags: tags?.toModels(),
             isHosted: isHosted,
             pillarId: pillarId,
             pillarName: pillarName

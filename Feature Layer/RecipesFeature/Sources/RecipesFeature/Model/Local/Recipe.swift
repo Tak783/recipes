@@ -16,9 +16,9 @@ public struct Recipe: Equatable, Sendable {
     let webTitle: String
     let webUrl: String
     let apiUrl: String
-    let fields: Fields
-    let tags: [Tag]
+    let fields: Fields?
+    let tags: [Tag]?
     let isHosted: Bool
-    let pillarId: String
-    let pillarName: String
+    let pillarId: String?
+    let pillarName: String?
 }

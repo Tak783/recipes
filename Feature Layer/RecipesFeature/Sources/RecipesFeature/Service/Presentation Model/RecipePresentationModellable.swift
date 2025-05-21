@@ -9,7 +9,7 @@ import Foundation
 
 public protocol RecipePresentationModellable: AnyObject, Identifiable {
     var id: String { get }
-    var title: String { get }
+    var title: String? { get }
     var headline: String? { get }
     var imageURL: URL? { get }
     

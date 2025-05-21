@@ -1,13 +1,13 @@
 //
-//  RecipesUITestsLaunchTests.swift
-//  RecipesUITests
+//  RecipesClientUITestsLaunchTests.swift
+//  RecipesClientUITests
 //
 //  Created by Tak Mazarura on 21/05/2025.
 //
 
 import XCTest
 
-final class RecipesUITestsLaunchTests: XCTestCase {
+final class RecipesClientUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
