@@ -6,6 +6,14 @@
       name = "Core Foundational">
    </FileSystemSynchronizedGroup>
    <FileSystemSynchronizedGroup
+      location = "group:Shared Components Layer"
+      name = "Shared Components Layer">
+   </FileSystemSynchronizedGroup>
+   <FileSystemSynchronizedGroup
+      location = "group:Feature Layer"
+      name = "Feature Layer">
+   </FileSystemSynchronizedGroup>
+   <FileSystemSynchronizedGroup
       location = "group:Presentation"
       name = "Presentation">
    </FileSystemSynchronizedGroup>
