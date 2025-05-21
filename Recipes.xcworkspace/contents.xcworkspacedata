@@ -6,7 +6,7 @@
       name = "Core Foundational">
    </FileSystemSynchronizedGroup>
    <FileSystemSynchronizedGroup
-      location = "group:Presentation Layer"
-      name = "Presentation Layer">
+      location = "group:Presentation"
+      name = "Presentation">
    </FileSystemSynchronizedGroup>
 </Workspace>
