@@ -17,6 +17,10 @@ let package = Package(
         .package(
             name: "CoreFoundational",
             path: "../../Core Layer/CoreFoundational"
+        ),
+        .package(
+            name: "CoreNetworking",
+            path: "../../Shared Components Layer/CoreNetworking"
         )
     ],
     targets: [
@@ -26,12 +30,19 @@ let package = Package(
                 .product(
                     name: "CoreFoundational",
                     package: "CoreFoundational"
+                ),
+                .product(
+                    name: "CoreNetworking",
+                    package: "CoreNetworking"
                 )
             ]
         ),
         .testTarget(
             name: "RecipesFeatureTests",
-            dependencies: ["RecipesFeature"]
+            dependencies: [
+                "RecipesFeature",
+                "CoreNetworking"
+            ]
         ),
     ]
 )
