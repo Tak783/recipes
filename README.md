@@ -16,12 +16,11 @@
 
 ### Platform Agnostic Components (Reasoning)
 Every layer that exists below the presentation layer is built with platform-agnostic components for the following reasons.
-* Easily use in Mac, iOS, iPadOS, Watch OS apps using either UIKit, WatchKit or SwiftUI
-* Highly *reusable* components that can easily be used to support other feature layer components and Presentation Layer Application targets
+* Easily re-use in Mac, iOS, iPadOS, Watch OS apps using either UIKit, WatchKit or SwiftUI
+* Highly *reusable* components that can easily be re-used to support other Feature Layer components and Apps
 * Faster *build times* for tests, testing suites and projects locally and on pipelines. 
 * Easier *collaboration* between teams (everything does not happen in one place)
-* Easily use new technologies i.e. SwiftUI or Combine
-* Applied Engineering business organisation considerations for *open-sourcing* capability, *hiring* and *demo apps* as layer components are independently relying on abstractions rather than concrete implementation. It is also very easy to bring on new technologies such as SwiftUI.
+* Applied Engineering business organisation considerations for *open-sourcing* capability, *hiring* and *demo apps* as layer components are independently relying on abstractions rather than concrete implementation.
 
 ### Design and Development (Discussion) 
 * Built applying SOLID principles with a relatively extensive Unit and Integration testing suite.
