@@ -10,7 +10,6 @@ import Foundation
 @MainActor
 public protocol RecipeFeedViewModellable: ObservableObject {
     var title: String { get }
-    var isLoading: Bool { get }
     var errorMessage: String? { get }
     var recipePresentationModels: [RecipePresentationModel] { get }
 

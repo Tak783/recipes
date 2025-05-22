@@ -28,10 +28,13 @@ public final class RecipeFeedViewModel: ObservableObject {
     }
 }
 
+// MARK: - ViewModelLoading
+extension RecipeFeedViewModel: ViewModelLoading {}
+
 // MARK: - RecipeFeedViewModellable
 extension RecipeFeedViewModel: RecipeFeedViewModellable {
     public func loadFeed() {
-        isLoading = true
+        setIsLoadingStatus()
         Task { [weak self] in
             guard let self else {
                 return
@@ -43,7 +46,7 @@ extension RecipeFeedViewModel: RecipeFeedViewModellable {
             case .failure:
                 self.errorMessage = "Failed to Load Feed"
             }
-            isLoading = false
+            setIsLoadingStatus(false)
         }
     }
 }
