@@ -15,7 +15,7 @@ struct RecipesClientApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LaunchViewFactory.welcomeView()
+            LaunchViewFactory.launchView()
         }
         .onChange(of: scenePhase) { _,_ in
             AuthenticationStore.storeAPIKeys()

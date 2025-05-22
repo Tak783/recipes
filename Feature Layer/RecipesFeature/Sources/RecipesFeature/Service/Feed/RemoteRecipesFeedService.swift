@@ -9,18 +9,21 @@ import CoreFoundational
 import CoreNetworking
 import Foundation
 
-public struct RemoteRecipesFeedService: RecipesFeedServiceable, Sendable {
+public struct RemoteRecipesFeedService: Sendable {
     let client: HTTPClient
-
+    
     public enum Error: Swift.Error {
         case invalidResponse
         case invalidData
     }
-
+    
     public init(client: HTTPClient) {
         self.client = client
     }
+}
 
+// MARK: - RecipesFeedServiceable
+extension RemoteRecipesFeedService: RecipesFeedServiceable {
     public func load() async -> RecipesFeedResult {
         let request = URLPool.recipesFeedRequest()
         let result = await client.performRequest(request)
@@ -35,7 +38,10 @@ public struct RemoteRecipesFeedService: RecipesFeedServiceable, Sendable {
 
 // MARK: Helpers
 extension RemoteRecipesFeedService {
-    private func decodeLoadRecipesSuccessResponse(data: Data, response: HTTPURLResponse) -> RecipesFeedResult {
+    private func decodeLoadRecipesSuccessResponse(
+        data: Data,
+        response: HTTPURLResponse
+    ) -> RecipesFeedResult {
         do {
             if response.statusCode != 200 {
                 return .failure(Error.invalidResponse)

@@ -11,7 +11,7 @@ import SwiftUI
 
 @MainActor
 struct LaunchViewFactory {
-    static func welcomeView() -> some View {
+    static func launchView() -> some View {
         let coordinator = LaunchCoordinator()
         return LaunchView(coordinator: coordinator)
     }

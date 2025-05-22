@@ -54,17 +54,17 @@ extension LaunchView {
             Text("Welcome to!")
                 .font(.title2)
                 .fontWeight(.semibold)
-                .foregroundColor(Color(uiColor: .label))
+                .foregroundColor(.primary)
             
             Text("Recipes")
                 .font(.largeTitle)
                 .fontWeight(.heavy)
-                .foregroundColor(Color(uiColor: .label))
+                .foregroundColor(.primary)
             
             Text("Eating healthily\nmade easy")
                 .font(.body)
                 .multilineTextAlignment(.center)
-                .foregroundColor(Color(uiColor: .label))
+                .foregroundColor(.primary)
                 .padding(.top, 8)
         }
     }
@@ -81,7 +81,7 @@ extension LaunchView {
             .foregroundColor(Color(uiColor: .systemBackground))
             .frame(maxWidth: .infinity)
             .padding()
-            .background(Color(uiColor: .label))
+            .background(.primary)
             .cornerRadius(30)
         }
         .padding(.horizontal, 32)
