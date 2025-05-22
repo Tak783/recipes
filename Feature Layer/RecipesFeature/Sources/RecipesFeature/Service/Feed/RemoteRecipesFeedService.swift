@@ -33,6 +33,7 @@ public struct RemoteRecipesFeedService: RecipesFeedServiceable, Sendable {
     }
 }
 
+// MARK: Helpers
 extension RemoteRecipesFeedService {
     private func decodeLoadRecipesSuccessResponse(data: Data, response: HTTPURLResponse) -> RecipesFeedResult {
         do {
