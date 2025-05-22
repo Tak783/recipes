@@ -1,6 +1,8 @@
 # Recipes
-An exercise in project architeture. Project presents a simple client to display recipes using The Guardian API: https://open-platform.theguardian.com/ 
-Suggested Improvements to the codebase can be found in the "Improvements" section
+* Project presents a simple client to display recipes using The Guardian API: https://open-platform.theguardian.com/ 
+* Improvements to the codebase can be found in the "Improvements" section at the bottom of the README
+* Discussion on Architecture, decisions and how to navigate the app can be found below 
+* See the "Warning" section for guidance before running the app
 
 ## Overview 
 
