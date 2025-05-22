@@ -20,14 +20,7 @@ struct RecipeFeedView: View {
     }
 }
 
-// MARK: - Helpers
-extension RecipeFeedView {
-    private func loadFeed() {
-        recipeFeedViewModel.loadFeed()
-    }
-}
-
-// MARK: - SubViews
+// MARK: - Core Views
 extension RecipeFeedView {
     @ViewBuilder
     private var contentView: some View {
@@ -41,6 +34,20 @@ extension RecipeFeedView {
             }
         }
     }
+}
+
+// MARK: - Supporting Views
+extension RecipeFeedView {
+    private var progressView: some View {
+        LoadingView(message: "Loading Recipes...")
+    }
+    
+    private func errorView(withMessage errorMessage: String) -> some View {
+        ErrorView(message: errorMessage) {
+            loadFeed()
+        }
+        .padding()
+    }
     
     private var listView: some View {
         List(recipeFeedViewModel.recipePresentationModels) { presentationModel in
@@ -50,20 +57,12 @@ extension RecipeFeedView {
         }
         .listStyle(.plain)
     }
-    
-    private var progressView: some View {
-        ProgressView("Loading Recipes...")
-            .padding()
-    }
-    
-    private func errorView(withMessage errorMessage: String) -> some View {
-        VStack(spacing: 12) {
-            Text(errorMessage)
-                .foregroundColor(.red)
-            Button("Retry") {
-                loadFeed()
-            }
-        }
-        .padding()
+}
+
+
+// MARK: - Load Feed
+extension RecipeFeedView {
+    private func loadFeed() {
+        recipeFeedViewModel.loadFeed()
     }
 }
