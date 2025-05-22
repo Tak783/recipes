@@ -75,11 +75,13 @@ The layer dependencies can be run and tested independently. They exist in the fo
 ## Improvements 
 There are many optimisations and improvements to be made across the project across the presentation App and Targets (open to discuss), but the following are some of the core changes I'd like to make.
 
-* Add Unit tests tests for the services
-* Add Unit and Integration tests to the View Model
-* UI test the feed feature 
-* Move SwiftUI presentation code for features i.e. `Recipe` into a package called `RecipesFeatureUI` to make re-usable for other apps
+* Add Unit Tests for the `RecipesFeature` Services and `CoreFoundational`
+* Add Unit and Integration Tests to `RecipesFeature` View Model, Presentation model and other supporting objects
+* Add UI Tests the Recipes Feed
+* Move the mock data from `CoreTesting` into a `CoreMockData` package for re-usability accross other apps
+* Move SwiftUI presentation code for features i.e. `Recipe` into a package called `RecipesFeatureUI` to make re-usable for other apps (when necessary)
 * Move coordinator into a package called `CoreNavigation` so it can be used by other apps or for when UI features end up in their own package  
-* Move re-usable UI componets i.e. `ErrorView` into a package called `CoreRecipesSwiftUIComponents`
-* Do all the usual things i.e. Localisation, Accessibility additions, a Design System
+* Move re-usable UI components i.e. `ErrorView` into a package called `CoreRecipesSwiftUIComponents`
+* Add all the usual things i.e. Localisation, Accessibility additions, a Design System
 * Guardian API Layer: If we end up using the guardian API for multiple features, I would add an API layer strictly used for interfacing with the Guardian API when creating URL requests. This API would sit above the Utility Layers and Below the Feature Layers.
+ 
