@@ -22,9 +22,9 @@ Every layer that exists below the presentation layer is built with platform-agno
 * Applied Engineering business organisation considerations for *open-sourcing* capability, *hiring* and *demo apps* as layer components are independently relying on abstractions rather than concrete implementation. It is also very easy to bring on new technologies such as SwiftUI.
 
 ### Design and Development (Discussion) 
-* Built applying SOLID principles with a relatively extensive Unit and Integration testing suite. 
+* Built applying SOLID principles with a relatively extensive Unit and Integration testing suite.
 * App Built in a TDD way, ensuring that functionality works as expected and also providing protection from regressions 
-* A simple UI with Accessibility features in place including Dynamic type, Bold Text, Voice Over amongst others and also Dark Mode as a bonus
+* More UI, Unit and Integrations could have been added as discussed in the improvments section  
 * Business and engineering organisations considerations were made when constructing this project as discussed in the previous section.
 
 ## Architectural decisions 
@@ -32,7 +32,7 @@ Every layer that exists below the presentation layer is built with platform-agno
 ### Layers (overview)
 * As seen in the overview, the app has four layers: `Foundation Layer`, `Core Shared Components`, `Feature Layer` and the `Presentation Layer`
 * Each module lives in its own independent project with as few dependencies as possible, contains its own tests, this way each feature can be
-   *  Built-in isolation without building the entire Presentation Layer Target 
+   *  Built-in isolation without building the entire Presentation Layer App 
    *  Be highly reusable, open sourceable and able to be used in demo apps
    *  Be platform agnostic usable in any presentation application target platform
 * Vertical dependencies: each layer contains modules used as dependencies by higher-level modules. Modules can import only from the layers below. 
@@ -68,11 +68,11 @@ The layer dependencies can be run and tested independently. They exist in the fo
 3. `RecipesClient/*` for the recipes app
 
 ### Warnings  
-* Main Branch is `main`, view and branch of from here.
-* As discussed you will need to add your own API Key (register one here: https://bonobo.capi.gutools.co.uk/register/developer).
+* As discussed you may need to add your own API Key into the app (register one here: https://bonobo.capi.gutools.co.uk/register/developer).
+* Add your API key to `AuthenticationStore` 
 
 ## Improvements 
-There are many optimisations and improvements I can make across the project across the presentation App and Targets (open to discuss), but the following are some of the core changes I'd like to make.
+There are many optimisations and improvements to be made across the project across the presentation App and Targets (open to discuss), but the following are some of the core changes I'd like to make.
 
 * Add Unit tests tests for the services
 * Add Unit and Integration tests to the View Model
