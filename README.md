@@ -10,7 +10,7 @@ Suggested Improvements to the codebase can be found in the "Improvements" sectio
 * There are four layers: `Foundation Layer`, `Core Shared Components`, `Feature Layer` and the `Presentation Layer` (Presentation Layer)
 * Layers dependencies are used vertically: each module can import only from layers below 
 
-
+<img width="1277" alt="README-Architecture" src="https://github.com/user-attachments/assets/cf31758a-86b4-4cfb-a04d-e9ef91a782d3">
 
 ### Platform Agnostic Components (Reasoning)
 Every layer that exists below the presentation layer is built with platform-agnostic components for the following reasons.
