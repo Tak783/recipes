@@ -13,6 +13,7 @@ import MockNetworking
 import Testing
 
 @Suite
+@MainActor
 final class RemoteRecipesFeedServiceTests {
     init() throws {
         setupAuthentication(withAPIKey: "a1b2c3d4")
