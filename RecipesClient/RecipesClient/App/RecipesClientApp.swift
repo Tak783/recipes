@@ -15,22 +15,10 @@ struct RecipesClientApp: App {
     
     var body: some Scene {
         WindowGroup {
-            let client = URLSessionHTTPClient()
-            let recipeFeedService = RemoteRecipesFeedService(client: client)
-            let recipeFeedViewModel = RecipeFeedViewModel(recipeFeedService: recipeFeedService, title: "Recipes")
-            RecipeFeedView(recipeFeedViewModel: recipeFeedViewModel)
+            LaunchViewFactory.welcomeView()
         }
         .onChange(of: scenePhase) { _,_ in
-            setupAuthenticationStore()
+            AuthenticationStore.storeAPIKeys()
         }
-    }
-}
-    
-// MARK: - Helpers
-extension RecipesClientApp {
-    /// Note - This is a temporary solution, API key would be on Backend requests would be peformed via the Backend
-    private func setupAuthenticationStore() {
-        UserDefaults.standard.set("3d1eec2b-f45d-4334-b562-0d7990366e49", forKey: "RecipesAPIKey")
-        UserDefaults.standard.synchronize()
     }
 }

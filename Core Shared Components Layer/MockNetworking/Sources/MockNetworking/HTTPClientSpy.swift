@@ -13,28 +13,30 @@ import CoreNetworking
 import Foundation
 import CoreNetworking
 
-public final class HTTPClientSpy: HTTPClient {
+@MainActor
+public final class HTTPClientSpy {
     public enum StatusCode: Int {
         case success = 200
         case error = 400
     }
-
+    
     // Store each request with its continuation (like a saved completion block)
-    private struct Message {
+    private struct Message: Sendable {
         let request: URLRequest
         let continuation: CheckedContinuation<HTTPClient.Result, Never>
     }
-
+    
     private var messages: [Message] = []
-
+    
     public var requests: [URLRequest] {
         messages.map { $0.request }
     }
-
+    
     public init() {}
+}
 
-    // ✅ Step 1: Save continuation (like a pending task)
-    // ✅ Step 2: Wait for it to be resumed
+// MARK: - HTTPClient
+extension HTTPClientSpy: HTTPClient {
     public func performRequest(_ request: URLRequest) async -> HTTPClient.Result {
         return await withCheckedContinuation { continuation in
             let message = Message(request: request, continuation: continuation)
@@ -42,8 +44,10 @@ public final class HTTPClientSpy: HTTPClient {
             // Now performRequest is suspended until continuation is resumed externally
         }
     }
+}
 
-    // ✅ Step 3: Complete the task externally — success
+// MARK: - Request Completion Helpers
+extension HTTPClientSpy {
     public func complete(withStatusCode code: Int = StatusCode.success.rawValue, data: Data, at index: Int = 0) {
         guard index < messages.count else {
             assertionFailure("No message at index \(index)")
@@ -65,7 +69,6 @@ public final class HTTPClientSpy: HTTPClient {
         messages[index].continuation.resume(returning: .success((data, response)))
     }
 
-    // ✅ Step 3: Complete the task externally — failure
     public func complete(with error: Error, at index: Int = 0) {
         guard index < messages.count else {
             assertionFailure("No message at index \(index)")
@@ -74,9 +77,7 @@ public final class HTTPClientSpy: HTTPClient {
 
         messages[index].continuation.resume(returning: .failure(error))
     }
-}
 
-extension HTTPClientSpy {
     public func waitForRequest(timeout: TimeInterval = 1.0) async throws {
         let deadline = Date().addingTimeInterval(timeout)
         while messages.isEmpty {

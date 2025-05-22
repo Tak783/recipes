@@ -12,13 +12,11 @@ struct RecipeFeedView: View {
     @StateObject var recipeFeedViewModel: RecipeFeedViewModel
     
     var body: some View {
-        NavigationStack {
-            contentView
-                .navigationTitle(recipeFeedViewModel.title)
-                .task {
-                    loadFeed()
-                }
-        }
+        contentView
+            .navigationTitle(recipeFeedViewModel.title)
+            .task {
+                loadFeed()
+            }
     }
 }
 
@@ -28,7 +26,7 @@ extension RecipeFeedView {
         recipeFeedViewModel.loadFeed()
     }
 }
- 
+
 // MARK: - SubViews
 extension RecipeFeedView {
     @ViewBuilder
