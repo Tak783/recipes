@@ -35,7 +35,7 @@ extension RemoteRecipesFeedServiceTests: RemoteRecipesFeedServiceTestSpec {
         async let result = sut.load()
         
         try await client.waitForRequest()
-        client.complete(withStatusCode: 100, data: Data()) // simulate non-200 status
+        client.complete(withStatusCode: 100, data: Data())
         
         if case let .failure(error as RemoteRecipesFeedService.Error) = await result {
             #expect(error == .invalidResponse)
