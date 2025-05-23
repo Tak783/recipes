@@ -83,5 +83,7 @@ There are many optimisations and improvements to be made across the project acro
 * Move coordinator into a package called `CoreNavigation` so it can be used by other apps or for when UI features end up in their own package  
 * Move re-usable UI components i.e. `ErrorView` into a package called `CoreRecipesSwiftUIComponents`
 * Add all the usual things i.e. Localisation, Accessibility additions, a Design System
+* Add memory leak tracking to tests
+* Clearly define what are unit tests and what are integration tests
 * Guardian API Layer: If we end up using the guardian API for multiple features, I would add an API layer strictly used for interfacing with the Guardian API when creating URL requests. This API would sit above the Utility Layers and Below the Feature Layers.
  

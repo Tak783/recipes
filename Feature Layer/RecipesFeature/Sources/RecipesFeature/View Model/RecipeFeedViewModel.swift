@@ -39,14 +39,14 @@ extension RecipeFeedViewModel: RecipeFeedViewModellable {
             guard let self else {
                 return
             }
-            let result = await recipeFeedService.load()
+            let result = await self.recipeFeedService.load()
             switch result {
             case let .success(returnedRecipes):
-                didSuccessfullyLoadRecipes(returnedRecipes)
+                self.didSuccessfullyLoadRecipes(returnedRecipes)
             case .failure:
                 self.errorMessage = "Failed to Load Feed"
             }
-            setIsLoadingStatus(false)
+            self.setIsLoadingStatus(false)
         }
     }
 }
