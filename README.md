@@ -25,14 +25,14 @@ Every layer that exists below the presentation layer is built with platform-agno
 ### Design and Development (Discussion) 
 * Built applying SOLID principles with a relatively extensive Unit and Integration testing suite.
 * App Built using TDD, ensuring that functionality works as expected and also providing protection from regressions 
-* More UI, Unit and Integrations could have been added as discussed in the improvments section
+* More UI, Unit and Integrations could have been added as discussed in the improvements section
 * Business and engineering organisations considerations were made when constructing this project as discussed in the previous section.
 
 ## Architectural decisions 
 
 ### Layers (overview)
 * As seen in the overview, the app has four layers: `Foundation Layer`, `Core Shared Components`, `Feature Layer` and the `Presentation Layer`
-* Each module lives in its own independent project with as few dependencies as possible, contains its own tests, this way each feature can be
+* Each module lives in its own independent project with as few dependencies as possible and contains its own tests, this way each feature can be:
    *  Built-in isolation without building the entire Presentation Layer App 
    *  Be highly reusable, open sourceable and able to be used in demo apps
    *  Be platform agnostic usable in any presentation application target platform
@@ -43,7 +43,7 @@ Contains foundational shared frameworks to be shared across multiple presentatio
 * `CoreFoundational`: contains extensions to the `Foundation` framework. These are used across Feature frameworks and the app. 
 
 ### `Core Shared Components Layer` (explained)
-These are shared components that make use of the "Utilities" layer to provide Core Shared functionality i.e. Networking, Local Persistance, Keychain access. The layer contains the following modules;
+These are shared components that make use of the "Utilities" layer to provide Core Shared functionality i.e. Networking, Local Persistence, Keychain access. The layer contains the following modules;
 * `CoreNetworking`: contains the networking layer and the `MockNetworking` framework which supports Testing Suites across the Project when testing Network calls. 
 
 ### `Feature Layer` (explained)
@@ -77,7 +77,7 @@ There are many optimisations and improvements to be made across the project acro
 
 * Add Unit Tests for the `RecipesFeature` Services and `CoreFoundational`
 * Add Unit and Integration Tests to `RecipesFeature` View Model, Presentation model and other supporting objects
-* Add UI Tests the Recipes Feed
+* Add UI Tests for the Recipes Feed
 * Move the mock data from `CoreTesting` into a `CoreMockData` package for re-usability accross other apps
 * Move SwiftUI presentation code for features i.e. `Recipe` into a package called `RecipesFeatureUI` to make re-usable for other apps (when necessary)
 * Move coordinator into a package called `CoreNavigation` so it can be used by other apps or for when UI features end up in their own package  
@@ -85,5 +85,5 @@ There are many optimisations and improvements to be made across the project acro
 * Add all the usual things i.e. Localisation, Accessibility additions, a Design System
 * Add memory leak tracking to tests
 * Clearly define what are unit tests and what are integration tests
-* Guardian API Layer: If we end up using the guardian API for multiple features, I would add an API layer strictly used for interfacing with the Guardian API when creating URL requests. This API would sit above the Utility Layers and Below the Feature Layers.
+* Guardian API Layer: If we end up using The Guardian API for multiple features, I would add an API layer strictly used for interfacing with The Guardian API when creating URL requests. This API would sit above the Utility Layers and Below the Feature Layers.
  

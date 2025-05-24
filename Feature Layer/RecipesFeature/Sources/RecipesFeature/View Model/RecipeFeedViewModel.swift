@@ -57,7 +57,7 @@ extension RecipeFeedViewModel {
     
     @MainActor
     private func didSFailToLoadRecipes(withError error: Error) {
-        efficientPrint(error.localizedDescription)
+        safePrint(error.localizedDescription)
         errorMessage = "Failed to Load Feed"
     }
 }
