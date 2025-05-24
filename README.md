@@ -24,8 +24,8 @@ Every layer that exists below the presentation layer is built with platform-agno
 
 ### Design and Development (Discussion) 
 * Built applying SOLID principles with a relatively extensive Unit and Integration testing suite.
-* App Built in a TDD way, ensuring that functionality works as expected and also providing protection from regressions 
-* More UI, Unit and Integrations could have been added as discussed in the improvments section  
+* App Built using TDD, ensuring that functionality works as expected and also providing protection from regressions 
+* More UI, Unit and Integrations could have been added as discussed in the improvments section
 * Business and engineering organisations considerations were made when constructing this project as discussed in the previous section.
 
 ## Architectural decisions 
@@ -42,11 +42,11 @@ Every layer that exists below the presentation layer is built with platform-agno
 Contains foundational shared frameworks to be shared across multiple presentation layer app targets i.e. iPhone, iPad for business and retail users. The layer contains the following modules; 
 * `CoreFoundational`: contains extensions to the `Foundation` framework. These are used across Feature frameworks and the app. 
 
-### `Foundation Layer` (explained)
+### `Core Shared Components Layer` (explained)
 These are shared components that make use of the "Utilities" layer to provide Core Shared functionality i.e. Networking, Local Persistance, Keychain access. The layer contains the following modules;
 * `CoreNetworking`: contains the networking layer and the `MockNetworking` framework which supports Testing Suites across the Project when testing Network calls. 
 
-### Feature Layer (explained)
+### `Feature Layer` (explained)
 Contains modules containing features used in Presentation Application Targets. The layer contains the following modules;
 * `RecipesFeature`: Feature to show the recipe feed module has an API, Service and Presentation Layer
 

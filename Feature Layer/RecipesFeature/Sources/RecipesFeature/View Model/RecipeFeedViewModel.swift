@@ -33,21 +33,16 @@ extension RecipeFeedViewModel: ViewModelLoading {}
 
 // MARK: - RecipeFeedViewModellable
 extension RecipeFeedViewModel: RecipeFeedViewModellable {
-    public func loadFeed() {
+    public func loadFeed() async {
         setIsLoadingStatus()
-        Task { [weak self] in
-            guard let self else {
-                return
-            }
-            let result = await self.recipeFeedService.load()
-            switch result {
-            case let .success(returnedRecipes):
-                self.didSuccessfullyLoadRecipes(returnedRecipes)
-            case .failure:
-                self.errorMessage = "Failed to Load Feed"
-            }
-            self.setIsLoadingStatus(false)
+        let result = await recipeFeedService.load()
+        switch result {
+        case let .success(returnedRecipes):
+            didSuccessfullyLoadRecipes(returnedRecipes)
+        case .failure:
+            errorMessage = "Failed to Load Feed"
         }
+        setIsLoadingStatus(false)
     }
 }
 

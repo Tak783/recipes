@@ -63,6 +63,8 @@ extension RecipeFeedView {
 // MARK: - Load Feed
 extension RecipeFeedView {
     private func loadFeed() {
-        recipeFeedViewModel.loadFeed()
+        Task {
+            await recipeFeedViewModel.loadFeed()
+        }
     }
 }

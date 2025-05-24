@@ -19,18 +19,18 @@ final class LaunchViewUITests: XCTestCase {
 }
 
 extension LaunchViewUITests {
-    func test_launch_labelsHaveExpectedText() throws {
+    func test_launch_labelsHaveExpectedTitle() throws {
         XCTAssertTrue(app.staticTexts["Welcome to!"].waitForExistence(timeout: 1))
         XCTAssertTrue(app.staticTexts["Recipes"].exists)
         XCTAssertTrue(app.staticTexts["Eating healthily\nmade easy"].exists)
     }
     
-    func test_getStartedButton_labelHasxpectedText() throws {
+    func test_getStartedButton_labelHasExpectedTitle() throws {
         let button = app.buttons["Get Started"]
         XCTAssertTrue(button.waitForExistence(timeout: 1))
     }
     
-    func test_getStartedButton_navigatesToRecipeFeed() throws {
+    func test_getStartedButton_onTap_navigatesToRecipeFeed() throws {
         let button = app.buttons["Get Started"]
         XCTAssertTrue(button.waitForExistence(timeout: 1))
         button.tap()
