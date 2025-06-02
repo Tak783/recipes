@@ -3,14 +3,13 @@
 //  RecipeFeedViewModel.swift
 //  RecipesFeature
 //
-//  Created by Tak Mazarura on 21/05/2025.
+//  Created on 21/05/2025.
 //
 
 import CoreFoundational
 import Foundation
 import SwiftUI
 
-@MainActor
 public final class RecipeFeedViewModel: ObservableObject {
     @Published public var isLoading: Bool = false
     @Published public var errorMessage: String? = nil
